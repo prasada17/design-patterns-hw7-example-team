@@ -24,7 +24,7 @@ public class Square extends Shape {
     @Override
     public void drawShape(ISurface surface) {
         System.out.println("Drawing " + getColor().toString() +
-                " square on " + surface.getSurfaceName() + "at coordinates (" +
+                " square on " + surface.getSurfaceName() + " at coordinates (" +
                 getX() + "," + getY() + ")");
     }
 

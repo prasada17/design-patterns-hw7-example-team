@@ -24,7 +24,7 @@ public class Circle extends Shape {
     @Override
     public void drawShape(ISurface surface) {
         System.out.println("Drawing " + getColor().toString() +
-                " circle on " + surface.getSurfaceName() + "at coordinates (" +
+                " circle on " + surface.getSurfaceName() + " at coordinates (" +
                 getX() + "," + getY() + ")");
     }
 
