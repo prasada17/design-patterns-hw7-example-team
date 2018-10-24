@@ -53,7 +53,7 @@ public class Canvas {
      *
      * @return the current canvas, to allow method chaining
      */
-    public void removeShape(Shape shape) {
+    public Canvas removeShape(Shape shape) {
         if (shapes.contains(shape)) {
             shapes.remove(shape);
 
