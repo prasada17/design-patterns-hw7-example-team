@@ -16,7 +16,7 @@ public class Main {
     public static void main(String args[]) {
         // TODO: How do we adapt this code for a Singleton?
         // Create a new canvas to add shapes to
-        Canvas canvas = new Canvas();
+        Canvas canvas = Canvas.getInstance();
 
         // TODO: How do we change this to use an Abstract Factory?
         // Create the shapes to add and add them to the canvas

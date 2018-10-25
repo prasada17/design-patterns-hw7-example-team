@@ -18,6 +18,12 @@ public class Canvas {
     // What do we need to do to make Canvas a singleton? What changes need to
     // occur below and in other parts of the code?
 
+    private static Canvas instance = new Canvas();
+
+    public static Canvas getInstance() {
+        return instance;
+    }
+
     /**
      * The shapes contained on this Canvas
      */
@@ -26,7 +32,7 @@ public class Canvas {
     /**
      * Create a new, empty Canvas
      */
-    public Canvas() {
+    private Canvas() {
         shapes = new LinkedList<>();
     }
 
