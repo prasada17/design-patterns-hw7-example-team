@@ -43,6 +43,7 @@ public class Canvas {
             shapes.add(shape);
 
             // TODO: Should we do anything else here?
+            notifyObservers();
         }
         return this;
     }
@@ -76,6 +77,17 @@ public class Canvas {
     }
 
     // TODO: This will be the subject in the Observer pattern.
+    public List<ICanvasObserver> observers = new LinkedList<>();
+
+    public void attach(ICanvasObserver observer) {
+        observers.add(observer);
+    }
+
+    private void notifyObservers() {
+        for (ICanvasObserver observer : observers) {
+            observer.update();
+        }
+    }
 
     // What do we need to add here to allow changes in this class to be
     // observed by the observers we will register?

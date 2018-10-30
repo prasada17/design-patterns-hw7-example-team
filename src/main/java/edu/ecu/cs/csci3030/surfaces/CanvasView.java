@@ -11,10 +11,15 @@ package edu.ecu.cs.csci3030.surfaces;
  * @author Mark Hills
  * @version 1.0
  */
-public class CanvasView implements ISurface {
+public class CanvasView implements ISurface, ICanvasObserver {
     @Override
     public String getSurfaceName() {
         return "Canvas View";
+    }
+
+    @Override
+    public void update() {
+        System.out.println("Something changed in the Canvas");
     }
 
     // TODO: We want to turn this class into an Observer, based on the Observer pattern, of changes in the Canvas.

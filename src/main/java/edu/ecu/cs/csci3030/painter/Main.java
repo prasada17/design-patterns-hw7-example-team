@@ -24,7 +24,6 @@ public class Main {
         Circle secondCircle = new Circle(Color.RED, 15, 21);
         Square firstSquare = new Square(Color.RED, 99, 125);
         Triangle firstTriangle = new Triangle(Color.BLUE, 53, 97);
-        canvas.addShape(firstCircle).addShape(secondCircle).addShape(firstSquare).addShape(firstTriangle);
 
         // Put them into a list -- this is just a convenience for the code below
         List<Shape> myShapes = new ArrayList<>();
@@ -35,6 +34,10 @@ public class Main {
         // Draw the shapes -- this would normally be triggered automatically,
         // but we do it here to make sure it is working.
         CanvasView canvasView = new CanvasView();
+        canvas.attach(canvasView);
+
+        canvas.addShape(firstCircle).addShape(secondCircle).addShape(firstSquare).addShape(firstTriangle);
+
         ShapeList shapeList = new ShapeList();
         for (Shape s : myShapes) {
             s.drawShape(canvasView);
