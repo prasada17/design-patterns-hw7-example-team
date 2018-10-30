@@ -13,11 +13,6 @@ import java.util.List;
  * @version 1.0
  */
 public class Canvas {
-    // TODO: We should only have a single Canvas, so this should use the Singleton pattern.
-
-    // What do we need to do to make Canvas a singleton? What changes need to
-    // occur below and in other parts of the code?
-
     private static Canvas instance = new Canvas();
 
     public static Canvas getInstance() {
