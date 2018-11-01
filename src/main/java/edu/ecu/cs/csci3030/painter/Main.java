@@ -13,13 +13,14 @@ public class Main {
     public static void main(String args[]) {
         // Create a new canvas to add shapes to
         Canvas canvas = Canvas.getInstance();
-        RedShapeFactory rsf = new RedShapeFactory();
-        // TODO: How do we change this to use an Abstract Factory?
+
+        ShapeFactory rsf = ShapeFactory.getRedShapeFactory();
+
         // Create the shapes to add and add them to the canvas
-        Circle firstCircle = new Circle(Color.BLUE, 5, 10);
+        Circle firstCircle = rsf.getCircle(5, 10);
         Circle redCircle = rsf.getCircle(15, 21);
         Square redSquare = rsf.getSquare(99, 125);
-        Triangle firstTriangle = new Triangle(Color.BLUE, 53, 97);
+        Triangle firstTriangle = rsf.getTriangle(53, 97);
         Triangle redTriangle = rsf.getTriangle(28, 52);
         // Put them into a list -- this is just a convenience for the code below
         List<Shape> myShapes = new ArrayList<>();
