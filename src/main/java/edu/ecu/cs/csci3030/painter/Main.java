@@ -1,10 +1,7 @@
 package edu.ecu.cs.csci3030.painter;
 
 import edu.ecu.cs.csci3030.colors.Color;
-import edu.ecu.cs.csci3030.shapes.Circle;
-import edu.ecu.cs.csci3030.shapes.Shape;
-import edu.ecu.cs.csci3030.shapes.Square;
-import edu.ecu.cs.csci3030.shapes.Triangle;
+import edu.ecu.cs.csci3030.shapes.*;
 import edu.ecu.cs.csci3030.surfaces.Canvas;
 import edu.ecu.cs.csci3030.surfaces.CanvasView;
 import edu.ecu.cs.csci3030.surfaces.ShapeList;
@@ -20,19 +17,19 @@ public class Main {
         // TODO: How do we change this to use an Abstract Factory?
         // Create the shapes to add and add them to the canvas
         Circle firstCircle = new Circle(Color.BLUE, 5, 10);
-        Circle secondCircle = new Circle(Color.RED, 15, 21);
-        Square firstSquare = new Square(Color.RED, 99, 125);
+        Circle redCircle = RedShapeFactory.getCircle(15, 21);
+        Square redSquare = RedShapeFactory.getSquare(99, 125);
         Triangle firstTriangle = new Triangle(Color.BLUE, 53, 97);
-
+        Triangle redTriangle = RedShapeFactory.getTriangle(28, 52);
         // Put them into a list -- this is just a convenience for the code below
         List<Shape> myShapes = new ArrayList<>();
-        myShapes.add(firstCircle); myShapes.add(secondCircle);
-        myShapes.add(firstSquare); myShapes.add(firstTriangle);
+        myShapes.add(firstCircle); myShapes.add(redCircle);
+        myShapes.add(redSquare); myShapes.add(firstTriangle);
 
         CanvasView canvasView = new CanvasView();
         canvas.attach(canvasView);
 
-        canvas.addShape(firstCircle).addShape(secondCircle).addShape(firstSquare).addShape(firstTriangle);
+        canvas.addShape(firstCircle).addShape(redCircle).addShape(redSquare).addShape(firstTriangle);
 
         ShapeList shapeList = new ShapeList();
 
