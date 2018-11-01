@@ -41,8 +41,6 @@ public class Canvas {
     public Canvas addShape(Shape shape) {
         if (!shapes.contains(shape)) {
             shapes.add(shape);
-
-            // TODO: Should we do anything else here?
             notifyObservers();
         }
         return this;
@@ -76,19 +74,27 @@ public class Canvas {
         return shapes.contains(shape);
     }
 
-    // TODO: This will be the subject in the Observer pattern.
-    public List<ICanvasObserver> observers = new LinkedList<>();
 
+    /**
+     * List to hold the observers that have attached to this subject.
+     */
+    private List<ICanvasObserver> observers = new LinkedList<>();
+
+    /**
+     * Attach a new observer to the canvas
+     *
+     * @param observer the observer to attach to this canvas
+     */
     public void attach(ICanvasObserver observer) {
         observers.add(observer);
     }
 
+    /**
+     * Notify the observers that a change has occurred on the canvas
+     */
     private void notifyObservers() {
         for (ICanvasObserver observer : observers) {
             observer.update();
         }
     }
-
-    // What do we need to add here to allow changes in this class to be
-    // observed by the observers we will register?
 }

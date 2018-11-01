@@ -21,13 +21,4 @@ public class CanvasView implements ISurface, ICanvasObserver {
     public void update() {
         System.out.println("Something changed in the Canvas");
     }
-
-    // TODO: We want to turn this class into an Observer, based on the Observer pattern, of changes in the Canvas.
-
-    // You should modify this class to allow this. The update method does not
-    // need to do anything useful at this point, it should just print a message
-    // saying something has changed. Remember, ShapeList is also an Observer,
-    // and in theory we could add even more, so the solution cannot be too
-    // specific to just this one class!
-
 }

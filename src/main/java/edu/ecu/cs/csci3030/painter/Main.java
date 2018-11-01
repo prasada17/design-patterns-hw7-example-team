@@ -14,7 +14,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String args[]) {
-        // TODO: How do we adapt this code for a Singleton?
         // Create a new canvas to add shapes to
         Canvas canvas = Canvas.getInstance();
 
@@ -30,15 +29,15 @@ public class Main {
         myShapes.add(firstCircle); myShapes.add(secondCircle);
         myShapes.add(firstSquare); myShapes.add(firstTriangle);
 
-        // TODO: What should happen when we have an Observer? Is this still needed?
-        // Draw the shapes -- this would normally be triggered automatically,
-        // but we do it here to make sure it is working.
         CanvasView canvasView = new CanvasView();
         canvas.attach(canvasView);
 
         canvas.addShape(firstCircle).addShape(secondCircle).addShape(firstSquare).addShape(firstTriangle);
 
         ShapeList shapeList = new ShapeList();
+
+        // Draw the shapes -- this would normally be triggered automatically,
+        // but we do it here to make sure it is working.
         for (Shape s : myShapes) {
             s.drawShape(canvasView);
             s.drawShape(shapeList);
